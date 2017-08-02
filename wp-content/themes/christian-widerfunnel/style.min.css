@@ -1312,6 +1312,8 @@ button.picker__today:focus,button.picker__clear:focus,button.picker__close:focus
 .clockpicker-canvas line{stroke:#26a69a;stroke-width:4;stroke-linecap:round}
 .card__container--center{width:75%;margin:auto}
 nav ul a,nav .brand-logo{color:#444}
+.btn-floating.btn-large{width:100px;height:100px}
+a{color:#26a69a}
 p{line-height:2rem}
 .button-collapse{color:#26a69a}
 .parallax-container{min-height:380px;line-height:0;height:auto;color:rgba(255,255,255,0.9)}

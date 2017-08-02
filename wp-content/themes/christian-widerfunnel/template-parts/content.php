@@ -10,16 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-
-			if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php christian_widerfunnel_posted_on(); ?>
-			</div><!-- .entry-meta -->
-			<?php
-			endif; ?>
-	</header><!-- .entry-header -->
+	
 
 	<div class="row">
 	  <div class="col">
@@ -34,12 +25,20 @@
 								the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 							endif; 
 						?>
+						<?php
+							if ( 'post' === get_post_type() ) : ?>
+							<div class="entry-meta">
+								<?php christian_widerfunnel_posted_on(); ?>
+							</div><!-- .entry-meta -->
+							<?php
+							endif; ?>
 	        </span>
-	        <a href=<?php the_permalink() ?> class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+	        <a href=<?php the_permalink() ?> class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons md-18">add</i></a>
 	      </div>
 	      <div class="card-content">
 	        <p>
 		        <?php
+		        if ($wp_query->is_posts_page) {
 							the_excerpt( sprintf(
 								wp_kses(
 									/* translators: %s: Name of current post. Only visible to screen readers */
@@ -52,11 +51,25 @@
 								),
 								get_the_title()
 							) );
+							} else {
+								the_content( sprintf(
+									wp_kses(
+										/* translators: %s: Name of current post. Only visible to screen readers */
+										__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'christian-widerfunnel' ),
+										array(
+											'span' => array(
+												'class' => array(),
+											),
+										)
+									),
+									get_the_title()
+								) );
+							}
 
-							wp_link_pages( array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'christian-widerfunnel' ),
-								'after'  => '</div>',
-							) );
+							// wp_link_pages( array(
+							// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'christian-widerfunnel' ),
+							// 	'after'  => '</div>',
+							// ) );
 						?>
 				</p>
 	      </div>

@@ -1,6 +1,7 @@
 // Main file
 
 @import "materialize/materialize";
+$primary: #26a69a;
 
 
 // overrides
@@ -10,17 +11,18 @@
   margin: auto;
 }
 
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+.btn-floating.btn-large {
+	width: 100px;
+	height: 100px;
+}
+
+a {
+	color: $primary
 }
 
 p {
