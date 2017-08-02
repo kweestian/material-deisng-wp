@@ -113,6 +113,17 @@ function christian_widerfunnel_widgets_init() {
 }
 add_action( 'widgets_init', 'christian_widerfunnel_widgets_init' );
 
+//Making jQuery Google API
+function modify_jquery() {
+	if (!is_admin()) {
+		// comment out the next two lines to load the local copy of jQuery
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', true, '2.2.4');
+		wp_enqueue_script('jquery');
+	}
+}
+add_action('init', 'modify_jquery');
+
 /**
  * Enqueue scripts and styles.
  */
@@ -128,6 +139,8 @@ function christian_widerfunnel_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'christian_widerfunnel_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.

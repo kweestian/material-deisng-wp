@@ -1310,6 +1310,14 @@ button.picker__today:focus,button.picker__clear:focus,button.picker__close:focus
 .clockpicker-canvas-bg{stroke:none;fill:#26a69a}
 .clockpicker-canvas-bg-trans{fill:#26a69a}
 .clockpicker-canvas line{stroke:#26a69a;stroke-width:4;stroke-linecap:round}
+nav ul a,nav .brand-logo{color:#444}
+p{line-height:2rem}
+.button-collapse{color:#26a69a}
+.parallax-container{min-height:380px;line-height:0;height:auto;color:rgba(255,255,255,0.9)}
+.parallax-container .section{width:100%}
+.icon-block{padding:0 15px}
+.icon-block .material-icons{font-size:inherit}
+footer.page-footer{margin:0}
 @media only screen and (min-width:0){html{font-size:14px}
 }@media only screen and (min-width:360px){.flow-text{font-size:1.2rem}
 }@media only screen and (min-width:390px){.flow-text{font-size:1.224rem}
@@ -1544,6 +1552,8 @@ nav .brand-logo.right{right:.5rem;left:auto}
 .side-nav.fixed.right-aligned{-webkit-transform:translateX(105%);-ms-transform:translateX(105%);transform:translateX(105%)}
 .side-nav a{padding:0 16px}
 .side-nav .user-view,.side-nav .userView{padding:16px 16px 0}
+.parallax-container .section{position:absolute;top:40%}
+#index-banner .section{top:10%}
 }@media only screen and (max-width:600px){.hide-on-small-only,.hide-on-small-and-down{display:none !important}
 .show-on-small{display:block !important}
 .center-on-small-only{text-align:center}
@@ -1551,6 +1561,7 @@ nav .brand-logo.right{right:.5rem;left:auto}
 .toast{width:100%;border-radius:0}
 .input-field .prefix ~ input{width:80%;width:calc(100% - 3rem)}
 .tap-target,.tap-target-wrapper{width:600px;height:600px}
+#index-banner .section{top:0}
 }@media only screen and (max-width:360px){.flow-text{font-size:1.2rem}
 }@-webkit-keyframes indeterminate{0%{left:-35%;right:100%}
 60%{left:100%;right:-90%}
