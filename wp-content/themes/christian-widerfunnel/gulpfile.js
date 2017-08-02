@@ -47,8 +47,8 @@ var styleSRC                = './assets/css/style.scss'; // Path to main .scss f
 var styleDestination        = './'; // Path to place the compiled CSS file.
 // Default set to root folder.
 
-// JS Vendor related.
-var jsVendorSRC             = './assets/js/vendor/*.js'; // Path to JS vendor folder.
+// JS Vendor related. We have to ignroe customizer when bundling as it requires injections from php
+var jsVendorSRC             = ['!./assets/js/vendor/customizer.js', './assets/js/vendor/*.js']; // Path to JS vendor folder.
 var jsVendorDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
 var jsVendorFile            = 'vendors'; // Compiled JS vendors file name.
 // Default set to vendors i.e. vendors.js.
@@ -94,6 +94,7 @@ const AUTOPREFIXER_BROWSERS = [
  * Load gulp plugins and passing them semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
+var del          = require('del'); // for clean
 
 // CSS related plugins.
 var sass         = require('gulp-sass'); // Gulp pluign for Sass compilation.
@@ -308,6 +309,13 @@ gulp.task( 'browser-sync', function() {
          } ))
         .pipe(gulp.dest(destFile))
         .pipe( notify( { message: 'TASK: "translate" Completed! 💯', onLast: true } ) )
+
+ });
+
+ gulp.task( 'clean', function () {
+    return del([
+      'assets/js/*.js'
+    ]);
 
  });
 
