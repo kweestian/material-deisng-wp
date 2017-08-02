@@ -119,9 +119,9 @@ add_action( 'widgets_init', 'christian_widerfunnel_widgets_init' );
 function christian_widerfunnel_scripts() {
 	wp_enqueue_style( 'christian-widerfunnel-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'custom-min-js', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery'), true );
+	wp_enqueue_script( 'custom-min-js', get_template_directory_uri() . '/dist/js/custom.min.js', array('jquery'), true );
 
-	wp_enqueue_script( 'vendor-min-js', get_template_directory_uri() . '/assets/js/vendors.min.js', array('jquery'), true );
+	wp_enqueue_script( 'vendor-min-js', get_template_directory_uri() . '/dist/js/vendors.min.js', array('jquery'), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
