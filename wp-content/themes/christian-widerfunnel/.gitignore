@@ -11,7 +11,7 @@
 *.zip
 *.tgz
 *.map
-
+.htaccess
 # Logs and databases #
 ######################
 *.log
