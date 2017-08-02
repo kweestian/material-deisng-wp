@@ -1310,6 +1310,7 @@ button.picker__today:focus,button.picker__clear:focus,button.picker__close:focus
 .clockpicker-canvas-bg{stroke:none;fill:#26a69a}
 .clockpicker-canvas-bg-trans{fill:#26a69a}
 .clockpicker-canvas line{stroke:#26a69a;stroke-width:4;stroke-linecap:round}
+.card__container--center{width:75%;margin:auto}
 nav ul a,nav .brand-logo{color:#444}
 p{line-height:2rem}
 .button-collapse{color:#26a69a}

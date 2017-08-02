@@ -140,6 +140,8 @@ function christian_widerfunnel_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'christian_widerfunnel_scripts' );
 
+add_theme_support( 'post-thumbnails' );
+
 
 
 /**

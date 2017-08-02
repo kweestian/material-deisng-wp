@@ -88,6 +88,47 @@ get_header(); ?>
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Contact Us</h4>
           <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <div class="row">
+				    <form class="col s12">
+				      <div class="row">
+				        <div class="input-field col s6">
+				          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+				          <label for="first_name">First Name</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <input id="last_name" type="text" class="validate">
+				          <label for="last_name">Last Name</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+				          <label for="disabled">Disabled</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input id="password" type="password" class="validate">
+				          <label for="password">Password</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input id="email" type="email" class="validate">
+				          <label for="email">Email</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col s12">
+				          This is an inline input field:
+				          <div class="input-field inline">
+				            <input id="email" type="email" class="validate">
+				            <label for="email" data-error="wrong" data-success="right">Email</label>
+				          </div>
+				        </div>
+				      </div>
+				    </form>
+				  </div>
         </div>
       </div>
 
@@ -110,6 +151,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
+
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
@@ -127,7 +169,7 @@ get_header(); ?>
 
 <?php
 if ( !is_front_page() && !is_home() ) {
-	get_sidebar();
+	// get_sidebar(); silence for now
 }
 
 get_footer();
